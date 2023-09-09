@@ -1,0 +1,69 @@
+@import url('https://fonts.googleapis.com/css2?family=Seaweed+Script&display=swap');
+:root {
+  --black: #1d2b3a;
+  --gray: rgba(255, 255, 255, 0.25);
+  --white: #fff;
+  --ocean: #00dfc4;
+}
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: 'Poppins', sans-serif;
+}
+body{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	min-height: 100vh;
+	flex-direction: column;
+	gap: 30px;
+	background: var(--black);
+}
+.inputBox{
+	position: relative;
+	width: 250px;
+}
+.inputBox input{
+	width: 100%;
+	padding: 10px;
+	border: 1px solid var(--gray);
+	background: var(--black);
+	border-radius: 5px;
+	outline: none;
+	color: var(--white);
+	font-size: 1em;
+	transition: 0.5s;
+}
+.inputBox span{
+	position: absolute;
+	left: 0;
+	padding: 10px;
+	margin: 0 0 0 20px;
+	pointer-events: none;
+	font-size: 1em;
+	color: var(--gray);
+	text-transform: uppercase;
+	transition: 0.5s;
+}
+.inputBox input:valid ~ span,
+.inputBox input:focus ~ span{
+	color: var(--ocean);
+	transform: translateX(10px) translateY(-7px);
+	font-size: 0.65em;
+	padding: 0 10px;
+	background: var(--black);
+	border-left: 1px solid var(--ocean);
+	border-right: 1px solid var(--ocean);
+	letter-spacing: 0.2em;
+}
+.inputBox:nth-child(2) input:valid ~ span,
+.inputBox:nth-child(2) input:focus ~ span{
+	background: var(--ocean);
+	color: var(--black);
+	border-radius: 2px;
+}
+.inputBox input:valid,
+.inputBox input:focus{
+	border: 1px solid var(--ocean);
+}
